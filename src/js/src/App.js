@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { getAllStudents } from './client';
 function App() {
+  getAllStudents().then(res => res.json().then(students => {
+    console.log(students);
+  }));
   return (
     <div className="App">
       <header className="App-header">
